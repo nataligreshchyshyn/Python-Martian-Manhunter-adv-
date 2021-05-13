@@ -1,0 +1,90 @@
+➜  ~ mkdir linux_lecture
+➜  ~ touch notes.txt
+➜  ~ cp notes.txt linux_lecture 
+➜  ~ ll
+total 40K
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Desktop
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Documents
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Downloads
+drwxrwxr-x 2 nata nata 4,0K кві 27 17:59 linux_lecture
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Music
+-rw-rw-r-- 1 nata nata    0 кві 27 17:59 notes.txt
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Pictures
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Public
+drwxr-xr-x 4 nata nata 4,0K кві 26 18:32 snap
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Templates
+drwxr-xr-x 2 nata nata 4,0K кві 26 17:18 Videos
+➜  ~ ls -lar
+total 232
+-rw-r--r--  1 nata nata  3710 кві 26 18:24 .zshrc
+-rw-------  1 nata nata  1502 кві 27 18:12 .zsh_history
+-rw-r--r--  1 nata nata 50596 кві 26 18:07 .zcompdump-nata-VirtualBox-5.8
+-rw-rw-r--  1 nata nata 49279 кві 26 18:06 .zcompdump
+-rw-------  1 nata nata   765 кві 26 18:24 .viminfo
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Videos
+-rw-r-----  1 nata nata     5 кві 26 17:33 .vboxclient-seamless.pid
+-rw-r-----  1 nata nata     5 кві 26 17:33 .vboxclient-draganddrop.pid
+-rw-r-----  1 nata nata     5 кві 26 17:33 .vboxclient-display-svga-x11.pid
+-rw-r-----  1 nata nata     5 кві 26 17:33 .vboxclient-clipboard.pid
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Templates
+-rw-r--r--  1 nata nata     0 кві 26 17:30 .sudo_as_admin_successful
+drwx------  2 nata nata  4096 кві 26 19:23 .ssh
+drwxr-xr-x  4 nata nata  4096 кві 26 18:32 snap
+-rw-r--r--  1 nata nata    10 кві 26 18:07 .shell.pre-oh-my-zsh
+-rw-------  1 nata nata     0 кві 26 18:25 .python_history
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Public
+-rw-r--r--  1 nata nata   807 кві 26 17:03 .profile
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Pictures
+drwxr-xr-x 12 nata nata  4096 кві 26 18:07 .oh-my-zsh
+-rw-rw-r--  1 nata nata     0 кві 27 17:59 notes.txt
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Music
+drwx------  5 nata nata  4096 кві 26 17:36 .mozilla
+drwx------  5 nata nata  4096 кві 26 18:26 .local
+drwxrwxr-x  2 nata nata  4096 кві 27 17:59 linux_lecture
+drwxrwxr-x  4 nata nata  4096 кві 26 18:29 .java
+drwx------  3 nata nata  4096 кві 26 18:29 .gnupg
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Downloads
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Documents
+drwxr-xr-x  2 nata nata  4096 кві 26 17:18 Desktop
+drwx------ 12 nata nata  4096 кві 26 18:29 .config
+drwx------ 15 nata nata  4096 кві 26 18:29 .cache
+-rw-r--r--  1 nata nata  3771 кві 26 17:03 .bashrc
+-rw-r--r--  1 nata nata   220 кві 26 17:03 .bash_logout
+-rw-------  1 nata nata   154 кві 26 18:36 .bash_history
+drwxr-xr-x  3 root root  4096 кві 26 17:03 ..
+drwxr-xr-x 20 nata nata  4096 кві 27 18:12 .
+➜  ~ mv notes.txt new_notes.txt
+➜  ~ rm linux_lecture/notes.txt new_notes.txt 
+➜  ~ touch linux_lecture/homework.sh
+➜  ~ touch -t 202001010415 linux_lecture/homework.sh 
+➜  ~ cd linux_lecture 
+➜  linux_lecture touch hw{,1,2}.sh hw1.txt
+➜  linux_lecture find *.txt
+hw1.txt
+➜  linux_lecture mkdir lecture_new && cp *.txt lecture_new/
+➜  linux_lecture echo 'linux_lecture' > homework.sh
+➜  linux_lecture cat homework.sh 
+linux_lecture
+➜  linux_lecture chmod 200 homework.sh 
+➜  linux_lecture cat homework.sh      
+cat: homework.sh: Permission denied
+➜  linux_lecture chmod 700 homework.sh
+➜  linux_lecture cat homework.sh      
+linux_lecture
+➜  linux_lecture ./homework.sh 
+./homework.sh: 1: linux_lecture: not found
+➜  linux_lecture vim homework.sh 
+➜  linux_lecture head -7 homework.sh 
+1
+2
+3
+4
+5
+6
+7
+➜  linux_lecture echo 'ls' > notes.sh 
+➜  linux_lecture chmod +x notes.sh 
+➜  linux_lecture ./notes.sh 
+homework.sh  hw1.sh  hw1.txt  hw2.sh  hw.sh  lecture_new  notes.sh
+➜  linux_lecture 
+
