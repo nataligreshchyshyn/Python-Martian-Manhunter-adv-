@@ -58,7 +58,7 @@ class Realtor(metaclass=RealtorMeta):
 
 
 class Person(ABC):
-    def __init__(self, name, age, money, own_house):
+    def __init__(self, name, age, money, own_house=False):
         self.name = name
         self.age = age
         self.money = money
@@ -84,8 +84,6 @@ class Person(ABC):
 
 
 class Human(Person):
-    def __init__(self, name, age, money, own_house=False):
-        super().__init__(name, age, money, own_house)
 
     def info(self):
         print(f'My name is {self.name} and I\'m {self.age} years old.\n'
@@ -148,7 +146,8 @@ if __name__ == '__main__':
     anna = Human('Anna', 28, 800000)
     ariel = Human('Ariel', 28, 800000)
 
-    adolf = Realtor('Adolf', houses=[villa, dacha, castle, castle_1, barak, sm, sm_1, sm_2, sm_3, sm_4, sm_5, sm_6, sm_7])
+    adolf = Realtor('Adolf',
+                    houses=[villa, dacha, castle, castle_1, barak, sm, sm_1, sm_2, sm_3, sm_4, sm_5, sm_6, sm_7])
 
     adolf.provide_info(ksu)
     ksu.buy_house(adolf, villa)
@@ -168,4 +167,3 @@ if __name__ == '__main__':
     print(f'Sirko\'s money before: {sirko.money} and home status: {sirko.own_house}')
     sirko.buy_house(adolf, sm_7)
     print(f'Sirko\'s money after: {sirko.money} and home status: {sirko.own_house}')
-
