@@ -1,0 +1,8 @@
+    1  ls
+    2  cowsay
+    3  whereis cowsay
+
+    7  find joke.txt
+    8  history
+root@350a3189b7ac:/#             
+
