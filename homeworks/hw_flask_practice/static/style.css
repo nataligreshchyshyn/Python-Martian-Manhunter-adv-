@@ -4,8 +4,8 @@ body {
 }
 
 h1 {
-    text-align: center;
     color: green;
+    text-align: center
 }
 
 .form-container {
@@ -16,22 +16,21 @@ h1 {
 
 form {
     text-align: left;
+    margin-top: 60px;
     width: 30%;
 }
 
 form label {
+    margin-top: 10px;
     display: block;
     margin-bottom: 10px;
-    margin-top: 10px;
 }
 
-/*form select {
-    width: 100%;
+form input {
+    margin-top: 10px;
+    width: 98.5%;
+    border-width: 1px
     padding: 10px;
-}*/
-
-.select-group {
-    text-align: left;
 }
 
 form button {
@@ -39,20 +38,8 @@ form button {
     width: 100%;
     background-color: green;
     color: white;
-    border-color: white;
+    border-color: gray;
     padding: 20px;
-}
-
-form input {
-    width: 96%;
-    padding: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-right: 0px;
-    padding-left: 15px;
-    padding-right: 4px;
-    border-style: solid;
-    border-width: 1px;
 }
 
 .container {
@@ -66,14 +53,26 @@ form input {
     text-align: center;
 }
 
+.short {
+    color: #173f5f;
+}
+
 .coords {
-    color: coral;
+    color: #20639b;
 }
 
 .temp {
-    color: #73b304;
+    color: #3caea3;
+}
+
+.humidity {
+    color: #f6d55c;
+}
+
+.clouds {
+    color: #ed553b;
 }
 
 .rain {
-    color: red;
+    color: #e12b38;
 }

@@ -1,43 +1,46 @@
 {
-  "coord": {
-    "lon": 24.0232,
-    "lat": 49.8383
-  },
-  "weather": [
+  "cod": "200",
+  "count": 1,
+  "list": [
     {
-      "id": 803,
-      "main": "Clouds",
-      "description": "broken clouds",
-      "icon": "04d"
+      "clouds": {
+        "all": 75
+      },
+      "coord": {
+        "lat": 49.8383,
+        "lon": 24.0232
+      },
+      "dt": 1623622153,
+      "id": 702550,
+      "main": {
+        "feels_like": 10.07,
+        "humidity": 93,
+        "pressure": 1017,
+        "temp": 10.53,
+        "temp_max": 11,
+        "temp_min": 10
+      },
+      "name": "Lviv",
+      "rain": {
+        "1h": 0.47
+      },
+      "snow": null,
+      "sys": {
+        "country": "UA"
+      },
+      "weather": [
+        {
+          "description": "light rain",
+          "icon": "10n",
+          "id": 500,
+          "main": "Rain"
+        }
+      ],
+      "wind": {
+        "deg": 320,
+        "speed": 5
+      }
     }
   ],
-  "base": "stations",
-  "main": {
-    "temp": 24.21,
-    "feels_like": 23.76,
-    "temp_min": 24.21,
-    "temp_max": 24.47,
-    "pressure": 1013,
-    "humidity": 41
-  },
-  "visibility": 10000,
-  "wind": {
-    "speed": 3,
-    "deg": 300
-  },
-  "clouds": {
-    "all": 75
-  },
-  "dt": 1623499785,
-  "sys": {
-    "type": 1,
-    "id": 8909,
-    "country": "UA",
-    "sunrise": 1623464128,
-    "sunset": 1623522734
-  },
-  "timezone": 10800,
-  "id": 702550,
-  "name": "Lviv",
-  "cod": 200
+  "message": "accurate"
 }

@@ -1,9 +1,7 @@
-# flask_web/app.py
 from flask import Flask, render_template, request, Response
 import requests
 from config import Config
 from time import time
-from pprint import pprint
 
 app = Flask(__name__)
 
@@ -15,38 +13,62 @@ def homepage():
 
 @app.route('/search', methods=['POST'])
 def search_weather():
-    city = request.form.get("city")
+    cities_input = request.form.get("city_list")
     lat = request.form.get("lat")
     lon = request.form.get("lon")
     unix_time = str(int(time()))
-    print(unix_time)
-
-
 
     headers = {
         'x-rapidapi-key': Config.WEATHER_API_KEY,
         'x-rapidapi-host': Config.WEATHER_API_HOST
     }
 
-    if city:
-        querystring_city = {"q": city, "lat": "0", "lon": "0", "id": "0", "lang": "null",
-                            "units": "metric", "mode": "xml, html"}
-        response = requests.request("GET", Config.WEATHER_API_URL, headers=headers, params=querystring_city)
+    responses = []
+    if cities_input:
+        cities = cities_input.split(',')
+        for city in cities:
+            querystring_city = {"q": city, "cnt": "1", "mode": "null", "lon": "0", "type": "link, accurate", "lat": "0",
+                                "units": "metric"}
+            city_info = requests.request("GET", Config.WEATHER_API_URL, headers=headers, params=querystring_city)
+            responses.append(city_info)
     else:
         querystring_location = {"lat": lat, "lon": lon, "dt": unix_time}
-        response = requests.request("GET", Config.WEATHER_API_TIMEMACHINE_URL, headers=headers,
-                                    params=querystring_location)
+        loc_response = requests.request("GET", Config.WEATHER_API_TIMEMACHINE_URL, headers=headers,
+                                        params=querystring_location)
+        responses.append(loc_response)
 
-    if response.status_code == 200:
-        weather = response.json()
-        pprint(weather)
-        return render_template("weather.html", weather=weather)
-    # elif response.status_code == 200:
-    #     weather = response.json()
-    #     pprint(weather)
-    #     return render_template("weather.html", weather=weather)
-    else:
-        return Response(status=404)
+    all_weather = []
+    for response in responses:
+        if response.status_code == 200:
+            all_data = response.json()
+            weather = {}
+            if all_data.get("current"):
+                weather["name"] = all_data["timezone"]
+                weather["coord"] = {"lat": all_data["lat"], "lon": all_data["lon"]}
+                weather["temp"] = int(all_data["current"]["temp"] - 273.15)
+                weather["humidity"] = all_data["current"]["humidity"]
+                weather["description"] = all_data["current"]["weather"][0]["description"]
+                weather["clouds"] = all_data["current"]["clouds"]
+                if all_data["current"].get("rain"):
+                    weather["rain"] = True
+            elif all_data.get("list"):
+                weather["name"] = all_data["list"][0]["name"]
+                weather["coord"] = all_data["list"][0]["coord"]
+                weather["temp"] = all_data["list"][0]["main"]["temp"]
+                weather["humidity"] = all_data["list"][0]["main"]["humidity"]
+                weather["description"] = all_data["list"][0]["weather"][0]["description"]
+                weather["clouds"] = all_data["list"][0]["clouds"]["all"]
+                if all_data["list"][0].get("rain"):
+                    weather["rain"] = True
+            all_weather.append(weather)
+        else:
+            return Response(status=404)
+
+    for item in all_weather:
+        if not item:
+            all_weather.remove(item)
+
+    return render_template("weather.html", all_weather=all_weather)
 
 
 if __name__ == '__main__':

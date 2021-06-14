@@ -12,27 +12,19 @@
         <h1>Weather Homepage</h1>
         <div class="form-container">
             <form action="/search" method="POST">
-                <h2>Search weather for your city</h2>
-                <div class="select-group">
-                    <label for="city">Choose your city:</label>
-<!--                        <option value="london">London</option>-->
-<!--                        <option value="lviv">Lviv</option>-->
-<!--                        <option value="kyiv">Kyiv</option>-->
-<!--                        <option value="paris">Paris</option>-->
-                    <input name="city" placeholder="Enter city name">
-                </div>
+                <h2>Search weather by city</h2>
+                <label for="cities">Choose your city:</label>
+                <input name="city_list" placeholder="Enter city name">
                 <div class="button-list">
-                    <button type="submit">Check Weather</button>
+                    <button type="submit">Check Weather by city</button>
                 </div>
-                <h2>Search weather by your location</h2>
-                <div class="select-group">
-                    <label for="lat">Please, specify the latitude:</label>
-                    <input name="lat" placeholder="Enter latitude">
-                    <label for="lon">Please, specify the longitude:</label>
-                    <input name="lon" placeholder="Enter longitude">
-                </div>
+                <h2>Search weather by location</h2>
+                <label for="lat">Please, specify the latitude:</label>
+                <input name="lat" placeholder="Enter latitude">
+                <label for="lon">Please, specify the longitude:</label>
+                <input name="lon" placeholder="Enter longitude">
                 <div class="button-list">
-                    <button type="submit">Check Weather</button>
+                    <button type="submit">Check Weather by location</button>
                 </div>
             </form>
         </div>

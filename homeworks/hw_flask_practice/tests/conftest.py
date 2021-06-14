@@ -1,7 +1,6 @@
 import pytest
 from app import app
 import json
-from types import SimpleNamespace
 
 
 @pytest.fixture()
