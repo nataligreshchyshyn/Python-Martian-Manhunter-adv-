@@ -1,0 +1,46 @@
+{
+  "cod": "200",
+  "count": 1,
+  "list": [
+    {
+      "clouds": {
+        "all": 75
+      },
+      "coord": {
+        "lat": 49.8383,
+        "lon": 24.0232
+      },
+      "dt": 1623622153,
+      "id": 702550,
+      "main": {
+        "feels_like": 10.07,
+        "humidity": 93,
+        "pressure": 1017,
+        "temp": 10.53,
+        "temp_max": 11,
+        "temp_min": 10
+      },
+      "name": "Lviv",
+      "rain": {
+        "1h": 0.47
+      },
+      "snow": null,
+      "sys": {
+        "country": "UA"
+      },
+      "weather": [
+        {
+          "description": "light rain",
+          "icon": "10n",
+          "id": 500,
+          "main": "Rain"
+        }
+      ],
+      "wind": {
+        "deg": 320,
+        "speed": 5
+      }
+    }
+  ],
+  "message": "accurate"
+}
