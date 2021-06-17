@@ -5,45 +5,27 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
     <title>Weather</title>
 </head>
 <body>
 <div class="container">
-    {% for weather in all_weather %}
-    <h1>Weather for {{ weather['name'] }}</h1>
-    <div class="short">
-        <h3>Short weather info:</h3>
-        <div class="short-info">
-            <p>{{ weather["description"] }}</p>
-        </div>
-    </div>
+    {% for i in range(weather|length) %}
+    <h1>Weather for {{ weather[i]['name'] }}</h1>
     <div class="coords">
         <h3>Coords</h3>
         <div class="coords-value">
-            <p>Lat: {{ weather['coord']['lat'] }}</p>
-            <p>Lon: {{ weather['coord']['lon'] }}</p>
+            <p>Lat: {{ weather[i]['coord']['lat'] }}</p>
+            <p>Lon: {{ weather[i]['coord']['lon'] }}</p>
         </div>
     </div>
     <div class="temp">
         <h3>Temp</h3>
         <div class="temp-value">
-            <p>{{ weather['temp'] }} °C</p>
+            <p>{{ weather[i]['main']['temp'] }}</p>
         </div>
     </div>
-    <div class="humidity">
-        <h3>Humidity</h3>
-        <div class="humi-value">
-            <p>{{ weather['humidity'] }} %</p>
-        </div>
-    </div>
-    <div class="clouds">
-        <h3>Clouds</h3>
-        <div class="clouds-value">
-            <p>{{ weather['clouds'] }} %</p>
-        </div>
-    </div>
-    {% if weather.get('rain') == True %}
+    {% if weather[i].get('rain') != None %}
     <div class="rain">
         <h3>Rain</h3>
     </div>

@@ -1,0 +1,88 @@
+{
+  "Lviv": {
+    "coord": {
+      "lon": 24.0232,
+      "lat": 49.8383
+    },
+    "weather": [
+      {
+        "id": 800,
+        "main": "Clear",
+        "description": "clear sky",
+        "icon": "01n"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 12.05,
+      "feels_like": 11.84,
+      "temp_min": 11.89,
+      "temp_max": 12.81,
+      "pressure": 1017,
+      "humidity": 97
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 0,
+      "deg": 0
+    },
+    "clouds": {
+      "all": 0
+    },
+    "dt": 1623795145,
+    "sys": {
+      "type": 1,
+      "id": 8909,
+      "country": "UA",
+      "sunrise": 1623809699,
+      "sunset": 1623868459
+    },
+    "timezone": 10800,
+    "id": 702550,
+    "name": "Lviv",
+    "cod": 200
+  },
+  "London": {
+    "coord": {
+      "lon": -0.1257,
+      "lat": 51.5085
+    },
+    "weather": [
+      {
+        "id": 803,
+        "main": "Clouds",
+        "description": "broken clouds",
+        "icon": "04n"
+      }
+    ],
+    "base": "stations",
+    "main": {
+      "temp": 17.38,
+      "feels_like": 17.18,
+      "temp_min": 13.92,
+      "temp_max": 19.23,
+      "pressure": 1018,
+      "humidity": 77
+    },
+    "visibility": 10000,
+    "wind": {
+      "speed": 3.09,
+      "deg": 100
+    },
+    "clouds": {
+      "all": 80
+    },
+    "dt": 1623795265,
+    "sys": {
+      "type": 2,
+      "id": 2019646,
+      "country": "GB",
+      "sunrise": 1623728567,
+      "sunset": 1623788360
+    },
+    "timezone": 3600,
+    "id": 2643743,
+    "name": "London",
+    "cod": 200
+  }
+}
