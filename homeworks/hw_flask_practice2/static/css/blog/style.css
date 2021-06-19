@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: hotpink;
+}
+
+.header a {
+    color: white;
+}
+
+.header a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 10px;
+    padding-top: 1px;
+}
+
+.footer {
+    background-color: #FCE4EC;
+    color: #C2185B;
+}
+
+.foot_title:link {
+    text-decoration: none;
+    color: #C2185B;
+}
+
+.foot_title:visited {
+    text-decoration: none;
+    color: #C2185B;
+}
+
+.foot_title:hover {
+    text-decoration: underline;
+}
+
+.uselinks ul {
+    padding: 0;
+}
+
+.uselinks a:link {
+    text-decoration: none;
+    color: #C2185B;
+}
+
+.uselinks a:visited {
+    text-decoration: none;
+    color: #C2185B;
+}
+
+.uselinks a:hover {
+    text-decoration: underline;
+}
+
+.fa {
+    color: #C2185B;
+}
+
+.copyright {
+    color: white;
+    background-color: #C2185B;
+}
+
+.copyright a:link {
+    text-decoration: none;
+    color: white;
+}
+
+.copyright a:hover {
+    color: white;
+    text-decoration: underline;
+}
