@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ article.title }}| Cursor</title>
+    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/blog/style.css">
+</head>
+<body>
+{% include 'blog/shared/header.html' %}
+
+<div class="card mb-3">
+  <img src="{{ article.img }}" class="card-img-top" alt="...">
+  <div class="card-body">
+      <h3 class="card-title"><i>{{ article.title }}</i></h3>
+    <p class="card-text"><i>{{ article.description }}</i></p>
+    <p class="card-text username"><small><i>By {{ username }}</i></small></p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/static/js/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="/static/js/blog/menu.js"></script>
+</body>
+</html>
