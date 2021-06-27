@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #a41a5e;
+}
+
+.header {
+    background-color: hotpink;
+}
+
+.header a {
+    color: white;
+}
+
+.header a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.form-control {
+    border: 1px solid #a41a5e;
+}
+
+fieldset legend {
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+fieldset input {
+    font-size: 1rem;
+}
+
+fieldset label {
+    margin-right: 20px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #ff69b4;
+    border-color: #a41a5e;
+}
+
+.btn-primary:active {
+    background-color: #f9057f;
+    border-color: #ff69b4;
+}
+
+.btn-primary:focus {
+    background-color: #f9057f;
+    border-color: #ff69b4;
+    box-shadow: 0 0 0 .25rem rgba(255, 105, 180, 0.69);
+}
+
+.btn-primary:hover {
+    background-color: #a41a5e;
+    border-color: #a41a5e;
+}
