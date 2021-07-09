@@ -4,6 +4,20 @@ body {
     color: #a41a5e;
 }
 
+.grid-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100%;
+  grid-gap: 10px;
+  background-color: #f987bf70;
+  padding: 10px;
+}
+
+.grid-container img {
+  width: 100%;
+  height: auto;
+}
+
 .header {
     background-color: hotpink;
 }

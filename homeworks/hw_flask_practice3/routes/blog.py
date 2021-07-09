@@ -16,7 +16,7 @@ def homepage():
 @app.route('/article/<string:slug>')
 def article_details(slug):
     article = Article.query.filter_by(slug=slug).first()
-    return render_template('blog/details.html', article=article)
+    return render_template('blog/article_details.html', article=article)
 
 
 @app.route('/article/create')
@@ -29,21 +29,22 @@ def article_store():
     data = request.form
     img = request.files['img']
     if img:
-        img.save(os.path.join(Config.UPLOAD_PATH, img.filename))
         path = "/" + Config.UPLOAD_PATH + img.filename
+        img.save(os.path.join(Config.UPLOAD_PATH, img.filename))
 
-    article = Article(
-        author_id=1,
-        title=data.get('title'),
-        slug=data.get('slug'),
-        description=data.get('description'),
-        short_description=data.get('short_description'),
-        img=path
-    )
-
-    db.session.add(article)
-    db.session.commit()
-    return redirect("/")
+        article = Article(
+            author_id=1,
+            title=data.get('title'),
+            slug=data.get('slug'),
+            description=data.get('description'),
+            short_description=data.get('short_description'),
+            img=path
+        )
+        db.session.add(article)
+        db.session.commit()
+        return redirect("/")
+    else:
+        return Response("Please, upload an image first", status=400)
 
 
 @app.route('/user/create')
@@ -55,14 +56,17 @@ def user_create():
 def user_store():
     data = request.form
     print(data.get('admin'))
+    print(type(data.get('admin')))
     user = User(
         username=data.get('username'),
         email=data.get('email'),
         created=str(datetime.now()),
         bio=data.get('bio'),
-        admin=bool(data.get('admin'))
+        admin=bool(int(data.get('admin')))
     )
-
-    db.session.add(user)
-    db.session.commit()
-    return redirect("/user/create")
+    try:
+        db.session.add(user)
+        db.session.commit()
+        return redirect("/user/create")
+    except Exception:
+        return Response("The user with the same data already exist in db", status=404)

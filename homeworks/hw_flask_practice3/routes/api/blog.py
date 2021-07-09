@@ -67,12 +67,11 @@ class ArticlesEntity(Resource):
 
 class Users(Resource):
     def get(self):
-        user = User.query.get(1)
-        serialized_articles = []
-        for article in user.articles:
-            print(article)
-            serialized_articles.append(article.serialize)
-        return serialized_articles
+        users = User.query.all()
+        serialized_users = []
+        for user in users:
+            serialized_users.append(user.serialize)
+        return serialized_users
 
 
 api.add_resource(MenuItem, '/api/menu-items')

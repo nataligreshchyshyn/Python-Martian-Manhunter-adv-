@@ -6,6 +6,7 @@ load_dotenv()
 
 class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     UPLOAD_PATH = 'static/uploads/'
     BLOG_TITLE = "Blog Cursor"
     MENU_ITEMS = [

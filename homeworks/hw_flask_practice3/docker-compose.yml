@@ -16,6 +16,8 @@ services:
 
   mysql:
     image: mysql:8.0
+    cap_add:
+      - SYS_NICE  # CAP_SYS_NICE
     container_name: flask-mysql
     working_dir: /application
     volumes:

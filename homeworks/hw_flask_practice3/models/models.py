@@ -2,6 +2,7 @@
 from app import db
 from helpers.serializers import Serializer
 
+
 class User(db.Model, Serializer):
     """Data model for user accounts."""
     __tablename__ = 'users'
@@ -46,12 +47,12 @@ class User(db.Model, Serializer):
 
 
 article_categories = db.Table('article_categories',
-                        db.Column("article_id", db.Integer, db.ForeignKey('articles.id')),
-                        db.Column("category_id", db.Integer, db.ForeignKey("category.id"))
-                    )
+                              db.Column("article_id", db.Integer, db.ForeignKey('articles.id')),
+                              db.Column("category_id", db.Integer, db.ForeignKey("category.id"))
+                              )
 
 
-class Article(db.Model):
+class Article(db.Model, Serializer):
     __tablename__ = 'articles'
     id = db.Column(
         db.Integer,
@@ -90,17 +91,6 @@ class Article(db.Model):
         unique=False
     )
     categories = db.relationship("Category", secondary=article_categories, back_populates="articles")
-
-    @property
-    def serialize(self):
-        return {
-            "id": self.id,
-            "title": self.title,
-            "slug": self.slug,
-            'description': self.description,
-            "short_description": self.short_description,
-            "img": self.img
-        }
 
 
 class Category(db.Model):
