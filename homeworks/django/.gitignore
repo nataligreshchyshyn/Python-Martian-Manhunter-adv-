@@ -1,0 +1,5 @@
+.idea
+tutorial/db.sqlite3
+tutorial/.idea
+tutorial/__pycache__
+tutorial/tutorial/__pycache__
