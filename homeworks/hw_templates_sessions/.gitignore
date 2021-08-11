@@ -1,0 +1,5 @@
+.env
+static/uploads
+static/js/bootstrap
+static/css/bootstrap
+docker/mysql
