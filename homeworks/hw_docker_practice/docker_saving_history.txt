@@ -1,0 +1,21 @@
+  176  31.5.2021 16:29  git checkout -b hw9_docker_practice
+  177  31.5.2021 17:03  docker images
+
+  180  31.5.2021 17:15  docker tag 8eb990 ubuntu_flask
+
+  182  31.5.2021 17:17  docker save --output ubuntu_flask.tar ubuntu_flask:latest\n
+
+  190  31.5.2021 17:28  docker image rm ubuntu_flask
+
+  192  31.5.2021 17:30  docker load < ubuntu_flask.tar
+
+  194  31.5.2021 17:30  docker run ubuntu_flask
+
+  195* 31.5.2021 17:32  docker container ls --all
+  196* 31.5.2021 17:34  docker export 0bf0d8 > flask_app.tar
+
+  199* 31.5.2021 17:37  docker import flask_app.tar flask_container:latest
+  200* 31.5.2021 17:38  docker image ls
+  201* 31.5.2021 17:40  docker run -t -i flask_container /bin/sh
+  202* 31.5.2021 17:42  docker ps -a
+  203* 31.5.2021 17:42  docker stop 0bf0d8
