@@ -1,0 +1,6 @@
+/docker/mysql
+/static/css/bootstrap
+/static/js/bootstrap
+.env
+test.db
+/static/uploads

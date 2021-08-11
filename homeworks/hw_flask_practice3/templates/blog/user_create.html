@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% include 'blog/shared/head.html' %}
+    <title>Create user</title>
+</head>
+<body>
+{% include 'blog/shared/header.html' %}
+
+<div class="container">
+    <h1>Create User</h1>
+    <form class="needs-validation" novalidate action="/user/store" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" required class="form-control" id="username" name="username" placeholder="Kek">
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Empty username
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required class="form-control"
+                   placeholder="sophie@example.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                   title="Please enter a valid e-mail address" >
+<!--            <input type="text" required class="form-control" id="email" name="email" placeholder="Kek">-->
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Empty email
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea required class="form-control" id="bio" name="bio" rows="3"></textarea>
+            <div class="invalid-feedback">
+                Empty bio
+            </div>
+        </div>
+        <div class="form-group">
+            <fieldset>
+                <legend>Admin</legend>
+
+                <input type="radio"
+                       name="admin"
+                       id="true"
+                       value="1"/>
+                <label for="true">Yes</label>
+
+                <input type="radio"
+                       name="admin"
+                       id="false"
+                       value="0"/>
+                <label for="false">No</label>
+            </fieldset>
+        </div>
+        <div class="btn-group mg-top-sm col-sm-12" role="group" aria-label="Create user">
+            <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+    </form>
+</div>
+
+
+{% include 'blog/shared/scripts.html' %}
+<script>
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    var forms = document.getElementsByClassName('needs-validation');
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+
+
+
+</script>
+</body>
+</html>
