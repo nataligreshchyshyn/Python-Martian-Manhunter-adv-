@@ -1,4 +1,4 @@
 [submodule "cursor-django"]
 	path = cursor-django
-	url = git@github.com:dima-kov/cursor-django-trello.git
+	url = git@github.com:nataligreshchyshyn/cursor-django-trello.git
 	branch = master
