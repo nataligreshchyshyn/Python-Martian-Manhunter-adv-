@@ -17,7 +17,7 @@ class Dealer(User):
         verbose_name_plural = 'Dealers'
 
     def __str__(self):
-        return f'Dealer: {self.first_name} {self.last_name} from {self.city}'
+        return f'{self.first_name} {self.last_name} from {self.city}, {self.city.country}'
 
 
 class City(models.Model):
@@ -35,7 +35,7 @@ class City(models.Model):
         verbose_name_plural = 'Cites'
 
     def __str__(self):
-        return f'{self.name} city'
+        return self.name
 
 
 class Country(models.Model):
@@ -48,4 +48,4 @@ class Country(models.Model):
         verbose_name_plural = 'Countries'
 
     def __str__(self):
-        return f'Country {self.name}'
+        return self.name

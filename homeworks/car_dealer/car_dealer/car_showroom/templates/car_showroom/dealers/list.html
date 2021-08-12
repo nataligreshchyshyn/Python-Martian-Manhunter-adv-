@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car dealers</title>
+</head>
+<body>
+<h1>Car dealers</h1>
+<ul>
+    {% for dealer in dealers %}
+    <li>
+        <h3><a href="{{dealer.id}}/">{{ dealer }}</a></h3>
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
