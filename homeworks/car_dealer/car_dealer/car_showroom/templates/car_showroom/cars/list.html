@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All cars</title>
+</head>
+<body>
+<table style="width:100%">Cars</table>
+<hr/>
+<thead>
+<tr>
+    <th>ID</th>
+    <th>Model</th>
+    <th>Gear case</th>
+    <th>Price $</th>
+</tr>
+<hr/>
+</thead>
+<br>
+<tbody>
+{% for car in cars %}
+<tr>
+    <td>{{ car.id }}.</td>
+    <td><a href="{{ car.id }}/">{{ car.car_model }}</a></td>
+    <td>{{ car.gear_case }}</td>
+    <td>{{ car.price }}</td>
+</tr>
+<hr/>
+<tr>
+    {% empty %}
+    <td>No cars yet.</td>
+</tr>
+{% endfor %}
+</tbody>
+<br>
+
+
+</body>
+</html>

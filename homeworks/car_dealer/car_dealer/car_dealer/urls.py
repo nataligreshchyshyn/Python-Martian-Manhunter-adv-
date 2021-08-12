@@ -16,6 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from car_showroom import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('cars/', views.CarListView.as_view(), name='cars'),
+    path('cars/<int:pk>/', views.CarDetailView.as_view(), name='car_detail'),
+    path('orders/', views.OrderListView.as_view(), name='orders'),
+    path('orders/<int:pk>/', views.OrderDetailView.as_view(), name='order_detail'),
+    path('dealers/', views.DealerListView.as_view(), name='dealers'),
+    path('dealers/<int:pk>/', views.DealerDetailView.as_view(), name='dealer_detail'),
+    path('api/cars/', views.car_serialize_list, name='api_cars'),
+    path('api/cars/<int:pk>/', views.car_serialize_detail, name='api_car_detail'),
 ]
