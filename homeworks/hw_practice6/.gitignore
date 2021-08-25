@@ -1,0 +1,6 @@
+.env
+.idea
+static/uploads
+static/js/bootstrap
+static/css/bootstrap
+docker/mysql
